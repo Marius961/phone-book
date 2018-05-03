@@ -1,4 +1,4 @@
-package ua.phone.book;
+package ua.phone.book.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
