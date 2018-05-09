@@ -84,6 +84,14 @@ public class EmploeeDAOImpl implements EmploeeDAO {
         jdbcTemplate.update(sql, params);
     }
 
+    @Override
+    public int getEmploeeCoutByDepartmentId(int id) {
+        String sql = "SELECT COUNT(*) FROM emploee WHERE department_id=:id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", id);
+        return jdbcTemplate.queryForObject(sql, params, Integer.class);
+    }
+
     private static final class EmloeeMapper implements RowMapper<Emploee> {
 
         @Override

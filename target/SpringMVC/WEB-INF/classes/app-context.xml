@@ -6,7 +6,7 @@
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property value="org.sqlite.JDBC" name="driverClassName"/>
-        <property value="jdbc:sqlite:D:/Projects/Idea/theaters-list/DB/theaters.db" name="url"/>
+        <property value="jdbc:sqlite:D:/Projects/Idea/phone_book/db/Database.db" name="url"/>
         <property value="" name="username"/>
         <property value="" name="password"/>
     </bean>

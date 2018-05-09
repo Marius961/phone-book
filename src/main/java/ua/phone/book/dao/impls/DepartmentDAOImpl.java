@@ -68,6 +68,8 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         jdbcTemplate.update(sql, params);
     }
 
+
+
     @Override
     public void deleteDepartment(int id) {
         String sql = "DELETE FROM departments WHERE id=:id";
