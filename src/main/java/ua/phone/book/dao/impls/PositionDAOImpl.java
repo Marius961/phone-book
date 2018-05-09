@@ -50,9 +50,10 @@ public class PositionDAOImpl implements PositionDAO {
 
     @Override
     public int insertPosition(Position position) {
-        String sql = "INSERT INTO positions (name) VALUES (:name)";
+        String sql = "INSERT INTO positions (name, search_field) VALUES (:name, :searchField)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", position.getName());
+        params.addValue("searchField", position.getName().toUpperCase());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(sql, params, keyHolder);
         return (int) keyHolder.getKey();
@@ -60,9 +61,11 @@ public class PositionDAOImpl implements PositionDAO {
 
     @Override
     public void updatePosition(Position position) {
-        String sql = "UPDATE positions SET name=:name";
+        String sql = "UPDATE positions SET name=:name, search_field=:seachField WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", position.getName());
+        params.addValue("id", position.getId());
+        params.addValue("searchField", position.getName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 

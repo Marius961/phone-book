@@ -26,12 +26,13 @@
 </header>
 
 <main>
-    <div class="form-header">${header}</div>
+    <div class="form-header"></div>
     <form:form action="/process-emploee" method="post" modelAttribute="emploee" cssClass="form-box">
         <div class="form-group">
             <form:label path="" for="fullName">ПІБ</form:label>
             <form:input path="fullName" type="text" class="form-control" id="fullName" value="${emploee.fullName}"/>
             <small class="form-text text-muted">Введіть ім'я, прізвище, по батькові працівника</small>
+            <form:errors path="fullName" cssClass="error-message"/>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -44,6 +45,7 @@
                 </c:forEach>
             </form:select>
         </div>
+        <form:errors path="positionId" cssClass="error-message"/>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="departmentSelect">Відділи</label>
@@ -54,19 +56,26 @@
                     <form:option value="${department.id}" label="${department.name}"/>
                 </c:forEach>
             </form:select>
+            <form:errors path="department" cssClass="error-message"/>
         </div>
-        <div class="form-group">
+        <div class="form-group" >
             <form:label path="ledlineNumber" for="ledlineNum">Домашній телефон</form:label>
-            <form:input path="ledlineNumber" type="tel" class="form-control" id="ledlineNum" value="${emploee.ledlineNumber}"/>
+            <form:input path="ledlineNumber" type="tel" class="form-control" id="ledlineNum" value="${emploee.ledlineNumber}" cssStyle="width: 80%"/>
             <small class="form-text text-muted">Введіть домашній телефон працівника</small>
+            <form:errors path="ledlineNumber" cssClass="error-message"/>
         </div>
         <div class="form-group">
             <form:label path="mobileNumber" for="mobileNum">Мобільний телефон</form:label>
-            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${emploee.mobileNumber}"/>
+            <br>
+            <div class="input-group-prepend" style="width: 10%; display: inline-block">
+                <div class="input-group-text">+38</div>
+            </div>
+            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${emploee.mobileNumber}" cssStyle="width: 70%; display: inline-block" />
             <small class="form-text text-muted">Введіть мобільний телефон працівника</small>
+            <form:errors path="mobileNumber" cssClass="error-message"/>
         </div>
         <form:hidden path="id" value="${emploee.id}"/>
-        <button type="submit" class="btn btn-primary" style="background-color: #28a745;">Зберегти</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #28a745">Зберегти</button>
     </form:form>
 </main>
 </body>

@@ -19,29 +19,15 @@
             <a class="navbar-brand" href="#">Головна</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Додати відділ<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Додати посаду<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/info"/> ">Посади та відділи<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <div class="nav-item dropdown" style="display: inline-block">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #949da5">
-                    Відділи
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <c:forEach var="department" items="${departments}">
-                        <a class="dropdown-item" href="#">${department.name}</a>
-                    </c:forEach>
-                </div>
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search">
+            <form:form modelAttribute="searchedObject" action="/search-emploee" method="post" class="form-inline my-2 my-lg-0">
+                <form:input path="objectName" class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Знайти</button>
-            </form>
+            </form:form>
         </div>
     </nav>
-
 </header>
 <main>
     <c:forEach var="department" items="${departments}" varStatus="status">
@@ -55,35 +41,43 @@
                 </div>
             </div>
             <div id="department${department.id}" style="display: none">
-                <div class="table-div">
-                    <span class="table-cell-div">Повне ім'я</span>
-                    <span class="table-cell-div">Посада</span>
-                    <span class="table-cell-div">Мобільний телефон</span>
-                    <span class="table-cell-div">Домашній телефон</span>
-                    <span class="table-cell-div" onclick="location.href='/add-emploee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
-                </div>
-                <c:forEach var="emploee" items="${department.emploeeList}">
+                <c:if test="${empty department.emploeeList}">
                     <div class="table-div-info">
-                        <span class="table-cell-div-info">${emploee.fullName}</span>
-                        <span class="table-cell-div-info">${emploee.position.name}</span>
-                        <span class="table-cell-div-info">${emploee.mobileNumber}</span>
-                        <span class="table-cell-div-info">${emploee.ledlineNumber}</span>
-                        <div class="table-cell-div-info">
-                            <form:form action="/edit-emploee" modelAttribute="emploee" cssClass="icon-div" id="editForm${emploee.id}">
-                                <form:hidden path="id" value="${emploee.id}"/>
-                                <form:hidden path="departmentId" value="${emploee.departmentId}"/>
-                                <form:hidden path="ledlineNumber" value="${emploee.ledlineNumber}"/>
-                                <form:hidden path="mobileNumber" value="${emploee.mobileNumber}"/>
-                                <form:hidden path="positionId" value="${emploee.positionId}"/>
-                                <form:hidden path="fullName" value="${emploee.fullName}"/>
-                                <img onclick="submit(${emploee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
-                            </form:form>
-                            <div class="icon-div">
-                                <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-emploee/${emploee.id}'">
+                        <span class="table-cell-div-info">Працівники у цьому відділі відсутні</span>
+                        <span class="table-cell-div" onclick="location.href='/add-emploee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                    </div>
+                </c:if>
+                <c:if test="${not empty department.emploeeList}">
+                    <div class="table-div">
+                        <span class="table-cell-div">Повне ім'я</span>
+                        <span class="table-cell-div">Посада</span>
+                        <span class="table-cell-div">Мобільний телефон</span>
+                        <span class="table-cell-div">Домашній телефон</span>
+                        <span class="table-cell-div" onclick="location.href='/add-emploee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                    </div>
+                    <c:forEach var="emploee" items="${department.emploeeList}">
+                        <div class="table-div-info">
+                            <span class="table-cell-div-info">${emploee.fullName}</span>
+                            <span class="table-cell-div-info">${emploee.position.name}</span>
+                            <span class="table-cell-div-info">${emploee.mobileNumber}</span>
+                            <span class="table-cell-div-info">${emploee.ledlineNumber}</span>
+                            <div class="table-cell-div-info">
+                                <form:form action="/edit-emploee" modelAttribute="emploee" cssClass="icon-div" id="editForm${emploee.id}">
+                                    <form:hidden path="id" value="${emploee.id}"/>
+                                    <form:hidden path="departmentId" value="${emploee.departmentId}"/>
+                                    <form:hidden path="ledlineNumber" value="${emploee.ledlineNumber}"/>
+                                    <form:hidden path="mobileNumber" value="${emploee.mobileNumber}"/>
+                                    <form:hidden path="positionId" value="${emploee.positionId}"/>
+                                    <form:hidden path="fullName" value="${emploee.fullName}"/>
+                                    <img onclick="submit(${emploee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                                </form:form>
+                                <div class="icon-div">
+                                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-emploee/${emploee.id}'">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </c:if>
             </div>
         </div>
     </c:forEach>

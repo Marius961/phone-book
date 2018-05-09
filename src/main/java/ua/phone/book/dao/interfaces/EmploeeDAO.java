@@ -17,4 +17,6 @@ public interface EmploeeDAO {
     int getEmploeeCoutByDepartmentId(int id);
 
     void deleteEmploee(int id);
+
+    List<Emploee> searchEmploee(String request);
 }

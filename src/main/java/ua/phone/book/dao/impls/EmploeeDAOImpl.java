@@ -50,21 +50,22 @@ public class EmploeeDAOImpl implements EmploeeDAO {
 
     @Override
     public void insertEmploee(Emploee emploee) {
-        String sql = "INSERT INTO emploee (full_name, position_id, ledline_number, mobile_number, department_Id)" +
-                "VALUES (:fullName, :positionId, :ledlineNum, :mobileNum, :departmentId)";
+        String sql = "INSERT INTO emploee (full_name, position_id, ledline_number, mobile_number, department_Id, search_field)" +
+                "VALUES (:fullName, :positionId, :ledlineNum, :mobileNum, :departmentId, :searchField)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("fullName", emploee.getFullName());
         params.addValue("positionId", emploee.getPositionId());
         params.addValue("ledlineNum", emploee.getLedlineNumber());
         params.addValue("mobileNum", emploee.getMobileNumber());
         params.addValue("departmentId", emploee.getDepartmentId());
+        params.addValue("searchField", emploee.getFullName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 
     @Override
     public void updateEmploee(Emploee emploee) {
         String sql = "UPDATE emploee SET full_name=:fullName, position_id=:positionId, " +
-                "ledline_number=:ledlineNum, mobile_number=:mobileNum, department_Id=:departmentId" +
+                "ledline_number=:ledlineNum, mobile_number=:mobileNum, department_Id=:departmentId, search_field=:searchField" +
                 " WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", emploee.getId());
@@ -73,6 +74,7 @@ public class EmploeeDAOImpl implements EmploeeDAO {
         params.addValue("ledlineNum", emploee.getLedlineNumber());
         params.addValue("mobileNum", emploee.getMobileNumber());
         params.addValue("departmentId", emploee.getDepartmentId());
+        params.addValue("searchField", emploee.getFullName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 
@@ -82,6 +84,24 @@ public class EmploeeDAOImpl implements EmploeeDAO {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         jdbcTemplate.update(sql, params);
+    }
+
+    @Override
+    public List<Emploee> searchEmploee(String request) {
+        String sql = "SELECT * FROM emploee e, departments d, positions p" +
+                " WHERE e.department_id=d.id and e.position_id=p.id and" +
+                " (e.search_field LIKE :request " +
+                "or e.ledline_number LIKE :request " +
+                "or e.mobile_number LIKE :request " +
+                "or d.search_field LIKE :request " +
+                "or p.search_field LIKE :request)";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("request","%" + request.toUpperCase() + "%");
+        try {
+            return jdbcTemplate.query(sql, params, new EmloeeMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override

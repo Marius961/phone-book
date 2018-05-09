@@ -70,6 +70,49 @@ public class EmploeeServiceImpl implements EmploeeService {
         emploeeDAO.updateEmploee(emploee);
     }
 
+    @Override
+    public void addPosition(Position position) {
+        positionDAO.insertPosition(position);
+    }
+
+    @Override
+    public void updatePosition(Position position) {
+        positionDAO.updatePosition(position);
+    }
+
+    @Override
+    public void deletePositiob(int id) {
+        positionDAO.deletePosition(id);
+    }
+
+    @Override
+    public void addDepartment(Department department) {
+        departmentDAO.insertDepartment(department);
+    }
+
+    @Override
+    public void deleteDepartment(int id) {
+        departmentDAO.deleteDepartment(id);
+    }
+
+    @Override
+    public void updateDepartment(Department department) {
+        departmentDAO.updateDepartment(department);
+    }
+
+    @Override
+    public List<Emploee> searchEmploee(String request) {
+        List<Emploee> emploeeList = null;
+        if (request != null) {
+            emploeeList =  emploeeDAO.searchEmploee(request);
+            for (Emploee emploee : emploeeList) {
+                emploee.setPosition(positionDAO.getPositionById(emploee.getPositionId()));
+                emploee.setDepartment(departmentDAO.getDepartmentById(emploee.getDepartmentId()));
+            }
+        }
+        return emploeeList;
+    }
+
     private List<Emploee> getEmploeesByDepartamentId(int departmentId) {
        List<Emploee>  emploeeList = emploeeDAO.getEmploeesByDepartamentId(departmentId);
        for (Emploee emploee : emploeeList) {

@@ -51,9 +51,10 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public int insertDepartment(Department department) {
-        String sql = "INSERT INTO departments (name) VALUES (:name)";
+        String sql = "INSERT INTO departments (name, search_field) VALUES (:name, :searchField)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", department.getName());
+        params.addValue("searchField", department.getName().toUpperCase());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(sql, params, keyHolder);
         return (int) keyHolder.getKey();
@@ -61,10 +62,11 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public void updateDepartment(Department department) {
-        String sql = "UPDATE departments SET name=:name WHERE id=:id";
+        String sql = "UPDATE departments SET name=:name, search_field=:searchField WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", department.getId());
         params.addValue("name", department.getName());
+        params.addValue("searchField", department.getName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 

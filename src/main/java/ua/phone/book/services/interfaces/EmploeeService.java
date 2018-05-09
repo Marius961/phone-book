@@ -23,4 +23,18 @@ public interface EmploeeService {
     Position getPositionById(int id);
 
     void updateEmploee(Emploee emploee);
+
+    void addPosition(Position position);
+
+    void updatePosition(Position position);
+
+    void deletePositiob(int id);
+
+    void addDepartment(Department department);
+
+    void deleteDepartment(int id);
+
+    void updateDepartment(Department department);
+
+    List<Emploee> searchEmploee(String request);
 }
