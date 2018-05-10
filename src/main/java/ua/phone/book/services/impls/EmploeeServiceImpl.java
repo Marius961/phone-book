@@ -39,7 +39,8 @@ public class EmploeeServiceImpl implements EmploeeService {
     public List<Department> getAllDepartments() {
         List<Department> departments = departmentDAO.getAllDepartments();
         for (Department department : departments) {
-            department.setEmploeeCount(emploeeDAO.getEmploeeCoutByDepartmentId(department.getId()));
+            setDepartmentDeleteStatus(department);
+            department.setEmploeeCount(emploeeDAO.getEmploeeCountByDepartmentId(department.getId()));
             department.setEmploeeList(getEmploeesByDepartamentId(department.getId()));
         }
         return departments;
@@ -47,7 +48,11 @@ public class EmploeeServiceImpl implements EmploeeService {
 
     @Override
     public List<Position> getAllPositions() {
-        return positionDAO.getAllPositions();
+        List<Position> positions = positionDAO.getAllPositions();
+        for (Position position : positions) {
+            setPositionDeleteStatus(position);
+        }
+        return positions;
     }
 
     @Override
@@ -119,5 +124,19 @@ public class EmploeeServiceImpl implements EmploeeService {
            emploee.setPosition(positionDAO.getPositionById(emploee.getPositionId()));
        }
        return emploeeList;
+    }
+
+    private void setPositionDeleteStatus(Position position) {
+        int emploeeCount = emploeeDAO.getEmploeeCountByPositionId(position.getId());
+        if (emploeeCount <= 0) {
+            position.setCanDelete(true);
+        }
+    }
+
+    private void setDepartmentDeleteStatus(Department department) {
+        int emploeeCount = emploeeDAO.getEmploeeCountByDepartmentId(department.getId());
+        if (emploeeCount <= 0) {
+            department.setCanDelete(true);
+        }
     }
 }

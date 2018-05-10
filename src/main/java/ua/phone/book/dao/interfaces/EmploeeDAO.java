@@ -10,11 +10,13 @@ public interface EmploeeDAO {
     
     Emploee getEmploeeById(int id);
 
+    int getEmploeeCountByPositionId(int id);
+
     void insertEmploee(Emploee emploee);
 
     void updateEmploee(Emploee emploee);
 
-    int getEmploeeCoutByDepartmentId(int id);
+    int getEmploeeCountByDepartmentId(int id);
 
     void deleteEmploee(int id);
 

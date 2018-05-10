@@ -49,6 +49,14 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
+    public int getEmploeeCountByPositionId(int id) {
+        String sql = "SELECT count(*) FROM emploee WHERE position_id=:id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", id);
+        return jdbcTemplate.queryForObject(sql, params, Integer.class);
+    }
+
+    @Override
     public void insertEmploee(Emploee emploee) {
         String sql = "INSERT INTO emploee (full_name, position_id, ledline_number, mobile_number, department_Id, search_field)" +
                 "VALUES (:fullName, :positionId, :ledlineNum, :mobileNum, :departmentId, :searchField)";
@@ -105,7 +113,7 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
-    public int getEmploeeCoutByDepartmentId(int id) {
+    public int getEmploeeCountByDepartmentId(int id) {
         String sql = "SELECT COUNT(*) FROM emploee WHERE department_id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);

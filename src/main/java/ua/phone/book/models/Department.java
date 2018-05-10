@@ -7,6 +7,15 @@ public class Department {
     private int id;
     private String name;
     private int emploeeCount;
+    private boolean canDelete;
+
+    public boolean isCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
+    }
 
     public int getEmploeeCount() {
         return emploeeCount;

@@ -46,9 +46,11 @@
                         <div class="icon-div">
                             <img onclick="location.href='/edit-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
                         </div>
-                        <div class="icon-div">
-                            <img onclick="location.href='/delete-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
-                        </div>
+                        <c:if test="${position.canDelete}">
+                            <div class="icon-div">
+                                <img onclick="location.href='/delete-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
+                            </div>
+                        </c:if>
                     </div>
                 </div>
             </c:forEach>
@@ -70,9 +72,11 @@
                         <div class="icon-div">
                             <img onclick="location.href='/edit-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
                         </div>
-                        <div class="icon-div">
-                            <img onclick="location.href='/delete-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
-                        </div>
+                        <c:if test="${department.canDelete}">
+                            <div class="icon-div">
+                                <img onclick="location.href='/delete-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
+                            </div>
+                        </c:if>
                     </div>
                 </div>
             </c:forEach>

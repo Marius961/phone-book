@@ -4,6 +4,15 @@ public class Position {
 
     private int id;
     private String name;
+    private boolean canDelete;
+
+    public boolean isCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
+    }
 
     public int getId() {
         return id;
