@@ -1,6 +1,6 @@
 package ua.phone.book.models;
 
-public class SearchedObhect {
+public class SearchedObject {
 
     private String objectName;
 

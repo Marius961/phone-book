@@ -5,7 +5,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Працівник</title>
+    <c:if test="${emploee.id != '0'}">
+    <title>Редагувати працівника</title>
+    </c:if>
+    <c:if test="${emploee.id == '0'}">
+    <title>Додати працівника</title>
+    </c:if>
     <c:if test="${emploee.id != '0'}">
         <link rel="icon" href="<%=request.getContextPath()%>/resources/images/edit.ico" type="images/x-icon">
     </c:if>

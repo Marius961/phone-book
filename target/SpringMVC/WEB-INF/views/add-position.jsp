@@ -5,7 +5,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Додати посаду</title>
+    <c:if test="${position.id != '0'}">
+        <title>Редагувати посаду</title>
+    </c:if>
+    <c:if test="${position.id == '0'}">
+        <title>Додати посаду</title>
+    </c:if>
     <c:if test="${position.id != '0'}">
     <link rel="icon" href="<%=request.getContextPath()%>/resources/images/edit.ico" type="images/x-icon">
     </c:if>
