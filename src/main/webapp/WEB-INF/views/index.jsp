@@ -22,7 +22,7 @@
                     <a class="nav-link" href="<c:url value="/info"/> ">Посади та відділи<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form:form modelAttribute="searchedObject" action="/search-emploee" method="post" class="form-inline my-2 my-lg-0">
+            <form:form modelAttribute="searchedObject" action="/search-employee" method="post" class="form-inline my-2 my-lg-0">
                 <form:input path="objectName" class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Знайти</button>
             </form:form>
@@ -41,38 +41,38 @@
                 </div>
             </div>
             <div id="department${department.id}" style="display: none">
-                <c:if test="${empty department.emploeeList}">
+                <c:if test="${empty department.employeeList}">
                     <div class="table-div-info">
                         <span class="table-cell-div-info">Працівники у цьому відділі відсутні</span>
-                        <span class="table-cell-div" onclick="location.href='/add-emploee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                        <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
                     </div>
                 </c:if>
-                <c:if test="${not empty department.emploeeList}">
+                <c:if test="${not empty department.employeeList}">
                     <div class="table-div">
                         <span class="table-cell-div">Повне ім'я</span>
                         <span class="table-cell-div">Посада</span>
                         <span class="table-cell-div">Мобільний телефон</span>
                         <span class="table-cell-div">Домашній телефон</span>
-                        <span class="table-cell-div" onclick="location.href='/add-emploee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                        <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
                     </div>
-                    <c:forEach var="emploee" items="${department.emploeeList}">
+                    <c:forEach var="employee" items="${department.employeeList}">
                         <div class="table-div-info">
-                            <span class="table-cell-div-info">${emploee.fullName}</span>
-                            <span class="table-cell-div-info">${emploee.position.name}</span>
-                            <span class="table-cell-div-info">${emploee.mobileNumber}</span>
-                            <span class="table-cell-div-info">${emploee.ledlineNumber}</span>
+                            <span class="table-cell-div-info">${employee.fullName}</span>
+                            <span class="table-cell-div-info">${employee.position.name}</span>
+                            <span class="table-cell-div-info">${employee.mobileNumber}</span>
+                            <span class="table-cell-div-info">${employee.ledlineNumber}</span>
                             <div class="table-cell-div-info">
-                                <form:form action="/edit-emploee" modelAttribute="emploee" cssClass="icon-div" id="editForm${emploee.id}">
-                                    <form:hidden path="id" value="${emploee.id}"/>
-                                    <form:hidden path="departmentId" value="${emploee.departmentId}"/>
-                                    <form:hidden path="ledlineNumber" value="${emploee.ledlineNumber}"/>
-                                    <form:hidden path="mobileNumber" value="${emploee.mobileNumber}"/>
-                                    <form:hidden path="positionId" value="${emploee.positionId}"/>
-                                    <form:hidden path="fullName" value="${emploee.fullName}"/>
-                                    <img onclick="submit(${emploee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                                <form:form action="/edit-employee" modelAttribute="employee" cssClass="icon-div" id="editForm${employee.id}">
+                                    <form:hidden path="id" value="${employee.id}"/>
+                                    <form:hidden path="departmentId" value="${employee.departmentId}"/>
+                                    <form:hidden path="ledlineNumber" value="${employee.ledlineNumber}"/>
+                                    <form:hidden path="mobileNumber" value="${employee.mobileNumber}"/>
+                                    <form:hidden path="positionId" value="${employee.positionId}"/>
+                                    <form:hidden path="fullName" value="${employee.fullName}"/>
+                                    <img onclick="submit(${employee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
                                 </form:form>
                                 <div class="icon-div">
-                                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-emploee/${emploee.id}'">
+                                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-employee/${employee.id}'">
                                 </div>
                             </div>
                         </div>

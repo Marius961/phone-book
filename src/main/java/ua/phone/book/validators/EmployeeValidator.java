@@ -4,24 +4,24 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import ua.phone.book.models.Emploee;
+import ua.phone.book.models.Employee;
 
 @Component
-public class EmploeeValidator implements Validator {
+public class EmployeeValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fullName", "empty.field");
-        if (target instanceof Emploee) {
-            Emploee emploee = (Emploee) target;
-            if (emploee.getPositionId() == 0) {
-                errors.rejectValue("positionId", "emploee.position.not.selected");
+        if (target instanceof Employee) {
+            Employee employee = (Employee) target;
+            if (employee.getPositionId() == 0) {
+                errors.rejectValue("positionId", "employee.position.not.selected");
             }
-            if (emploee.getDepartmentId() == 0) {
-                errors.rejectValue("departmentId", "emploee.department.not.selected");
+            if (employee.getDepartmentId() == 0) {
+                errors.rejectValue("departmentId", "employee.department.not.selected");
             }
-            validateLedlineNum(emploee.getLedlineNumber().trim(), errors);
-            validateMobileNum(emploee.getMobileNumber().trim(), errors);
+            validateLedlineNum(employee.getLedlineNumber().trim(), errors);
+            validateMobileNum(employee.getMobileNumber().trim(), errors);
 
         }
     }
@@ -38,10 +38,10 @@ public class EmploeeValidator implements Validator {
         try {
             int test = Integer.parseInt(number);
             if (number.length() != 10) {
-                errors.rejectValue("mobileNumber", "emploee.mobile.number.min.size");
+                errors.rejectValue("mobileNumber", "employee.mobile.number.min.size");
             }
         } catch (NumberFormatException e) {
-            errors.rejectValue("mobileNumber", "emoloee.number.incorrect");
+            errors.rejectValue("mobileNumber", "employee.number.incorrect");
         }
     }
     @Override

@@ -17,7 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="<c:url value="/"/>">На головну</a>
-            <form:form modelAttribute="searchedObject" action="/search-emploee" method="post" class="form-inline my-2 my-lg-0">
+            <form:form modelAttribute="searchedObject" action="/search-employee" method="post" class="form-inline my-2 my-lg-0">
                 <form:input path="objectName" class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Знайти</button>
             </form:form>
@@ -33,24 +33,24 @@
         <span class="table-cell-div">Домашній телефон</span>
         <span class="table-cell-div-info"></span>
     </div>
-    <c:forEach var="emploee" items="${results}">
+    <c:forEach var="employee" items="${results}">
         <div class="table-div-info">
-            <span class="table-cell-div-info">${emploee.fullName}</span>
-            <span class="table-cell-div-info">${emploee.position.name}<br>(${emploee.department.name})</span>
-            <span class="table-cell-div-info">${emploee.mobileNumber}</span>
-            <span class="table-cell-div-info">${emploee.ledlineNumber}</span>
+            <span class="table-cell-div-info">${employee.fullName}</span>
+            <span class="table-cell-div-info">${employee.position.name}<br>(${employee.department.name})</span>
+            <span class="table-cell-div-info">${employee.mobileNumber}</span>
+            <span class="table-cell-div-info">${employee.ledlineNumber}</span>
             <div class="table-cell-div-info">
-                <form:form action="/edit-emploee" modelAttribute="emploee" cssClass="icon-div" id="editForm${emploee.id}">
-                    <form:hidden path="id" value="${emploee.id}"/>
-                    <form:hidden path="departmentId" value="${emploee.departmentId}"/>
-                    <form:hidden path="ledlineNumber" value="${emploee.ledlineNumber}"/>
-                    <form:hidden path="mobileNumber" value="${emploee.mobileNumber}"/>
-                    <form:hidden path="positionId" value="${emploee.positionId}"/>
-                    <form:hidden path="fullName" value="${emploee.fullName}"/>
-                    <img onclick="submit(${emploee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                <form:form action="/edit-employee" modelAttribute="employee" cssClass="icon-div" id="editForm${employee.id}">
+                    <form:hidden path="id" value="${employee.id}"/>
+                    <form:hidden path="departmentId" value="${employee.departmentId}"/>
+                    <form:hidden path="ledlineNumber" value="${employee.ledlineNumber}"/>
+                    <form:hidden path="mobileNumber" value="${employee.mobileNumber}"/>
+                    <form:hidden path="positionId" value="${employee.positionId}"/>
+                    <form:hidden path="fullName" value="${employee.fullName}"/>
+                    <img onclick="submit(${employee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
                 </form:form>
                 <div class="icon-div">
-                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-emploee/${emploee.id}'">
+                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-employee/${employee.id}'">
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 package ua.phone.book.services.interfaces;
 
 import ua.phone.book.models.Department;
-import ua.phone.book.models.Emploee;
+import ua.phone.book.models.Employee;
 import ua.phone.book.models.Position;
 
 import java.util.List;
@@ -10,7 +10,7 @@ public interface EmploeeService {
 
     List<Department> getDepartmentsWithoutInfo();
 
-    void addEmploee(Emploee emploee);
+    void addEmploee(Employee employee);
 
     List<Department> getAllDepartments();
 
@@ -22,7 +22,7 @@ public interface EmploeeService {
 
     Position getPositionById(int id);
 
-    void updateEmploee(Emploee emploee);
+    void updateEmploee(Employee employee);
 
     void addPosition(Position position);
 
@@ -36,5 +36,5 @@ public interface EmploeeService {
 
     void updateDepartment(Department department);
 
-    List<Emploee> searchEmploee(String request);
+    List<Employee> searchEmploee(String request);
 }

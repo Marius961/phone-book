@@ -1,6 +1,6 @@
 package ua.phone.book.models;
 
-public class Emploee {
+public class Employee {
 
     private int id;
     private String fullName;

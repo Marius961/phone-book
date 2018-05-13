@@ -61,11 +61,11 @@ public class PositionDAOImpl implements PositionDAO {
 
     @Override
     public void updatePosition(Position position) {
-        String sql = "UPDATE positions SET name=:name, search_field=:seachField WHERE id=:id";
+        String sql = "UPDATE positions SET name=:name, search_field=:request WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", position.getName());
         params.addValue("id", position.getId());
-        params.addValue("searchField", position.getName().toUpperCase());
+        params.addValue("request", position.getName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 

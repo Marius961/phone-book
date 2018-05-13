@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import ua.phone.book.models.Department;
-import ua.phone.book.models.Emploee;
+import ua.phone.book.models.Employee;
 import ua.phone.book.models.Position;
 import ua.phone.book.models.SearchedObhect;
 import ua.phone.book.services.interfaces.EmploeeService;
 import ua.phone.book.validators.BaseValidator;
-import ua.phone.book.validators.EmploeeValidator;
+import ua.phone.book.validators.EmployeeValidator;
 
 @Controller
 public class MainController {
 
     private EmploeeService emploeeService;
     private BaseValidator baseValidator;
-    private EmploeeValidator emploeeValidator;
+    private EmployeeValidator employeeValidator;
 
     @Autowired
     private void setEmploeeService(EmploeeService emploeeService) {
@@ -29,68 +29,68 @@ public class MainController {
     }
 
     @Autowired
-    private void setValidators(BaseValidator baseValidator, EmploeeValidator emploeeValidator) {
+    private void setValidators(BaseValidator baseValidator, EmployeeValidator employeeValidator) {
         this.baseValidator = baseValidator;
-        this.emploeeValidator = emploeeValidator;
+        this.employeeValidator = employeeValidator;
     }
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public ModelAndView getHomePage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("departments", emploeeService.getAllDepartments());
-        modelAndView.addObject("emploee", new Emploee());
+        modelAndView.addObject("employee", new Employee());
         modelAndView.addObject("searchedObject", new SearchedObhect());
         modelAndView.setViewName("index");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add-emploee/{departmentId}", method = RequestMethod.GET)
-    public ModelAndView getAddForm(@ModelAttribute Emploee emploee, @PathVariable int departmentId) {
+    @RequestMapping(value = "/add-employee/{departmentId}", method = RequestMethod.GET)
+    public ModelAndView getAddForm(@ModelAttribute Employee employee, @PathVariable int departmentId) {
         if (departmentId == 0) {
             return new ModelAndView("redirect:/");
         } else {
-            return getEmploeePage(emploee);
+            return getEmploeePage(employee);
         }
     }
 
-    @RequestMapping(value = "/process-emploee", method = RequestMethod.POST)
-    public ModelAndView processEmploee(@ModelAttribute Emploee emploee, BindingResult bindingResult) {
-        emploeeValidator.validate(emploee, bindingResult);
+    @RequestMapping(value = "/process-employee", method = RequestMethod.POST)
+    public ModelAndView processEmploee(@ModelAttribute Employee employee, BindingResult bindingResult) {
+        employeeValidator.validate(employee, bindingResult);
         if (!bindingResult.hasErrors()) {
-            if (emploee.getId() == 0) {
-                emploeeService.addEmploee(emploee);
+            if (employee.getId() == 0) {
+                emploeeService.addEmploee(employee);
             } else {
-                emploeeService.updateEmploee(emploee);
+                emploeeService.updateEmploee(employee);
             }
             return new ModelAndView("redirect:/");
         } else {
-            return getEmploeePage(emploee);
+            return getEmploeePage(employee);
         }
     }
 
-    private ModelAndView getEmploeePage(Emploee emploee) {
+    private ModelAndView getEmploeePage(Employee employee) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("emploee", emploee);
+        modelAndView.addObject("employee", employee);
         modelAndView.addObject("positions", emploeeService.getAllPositions());
         modelAndView.addObject("departments", emploeeService.getDepartmentsWithoutInfo());
-        modelAndView.setViewName("add-emploee");
+        modelAndView.setViewName("add-employee");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/delete-emploee/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete-employee/{id}", method = RequestMethod.GET)
     public String deleteEmploee(@PathVariable int id) {
         emploeeService.deleteEmploee(id);
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/edit-emploee", method = RequestMethod.POST)
-    public ModelAndView getEditForm(@ModelAttribute Emploee emploee) {
+    @RequestMapping(value = "/edit-employee", method = RequestMethod.POST)
+    public ModelAndView getEditForm(@ModelAttribute Employee employee) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("emploee", emploee);
+        modelAndView.addObject("emplyoee", employee);
         modelAndView.addObject("positions", emploeeService.getAllPositions());
         modelAndView.addObject("departments", emploeeService.getDepartmentsWithoutInfo());
         modelAndView.addObject("header", "Редагування працівника");
-        modelAndView.setViewName("add-emploee");
+        modelAndView.setViewName("add-employee");
         return modelAndView;
     }
 
@@ -184,11 +184,11 @@ public class MainController {
         return "redirect:/info";
     }
 
-    @RequestMapping(value = "/search-emploee", method = RequestMethod.POST)
+    @RequestMapping(value = "/search-emplyoee", method = RequestMethod.POST)
     public ModelAndView getSearchResults(@ModelAttribute SearchedObhect searchedObhect) {
         if (!searchedObhect.getObjectName().equals("")) {
             ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("emploee", new Emploee());
+            modelAndView.addObject("employee", new Employee());
             modelAndView.addObject("searchedObject", new SearchedObhect());
             modelAndView.addObject("results", emploeeService.searchEmploee(searchedObhect.getObjectName()));
             modelAndView.setViewName("search-results");

@@ -3,10 +3,10 @@ package ua.phone.book.services.impls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.phone.book.dao.interfaces.DepartmentDAO;
-import ua.phone.book.dao.interfaces.EmploeeDAO;
+import ua.phone.book.dao.interfaces.EmployeeDAO;
 import ua.phone.book.dao.interfaces.PositionDAO;
 import ua.phone.book.models.Department;
-import ua.phone.book.models.Emploee;
+import ua.phone.book.models.Employee;
 import ua.phone.book.models.Position;
 import ua.phone.book.services.interfaces.EmploeeService;
 
@@ -16,12 +16,12 @@ import java.util.List;
 public class EmploeeServiceImpl implements EmploeeService {
 
     private DepartmentDAO departmentDAO;
-    private EmploeeDAO emploeeDAO;
+    private EmployeeDAO employeeDAO;
     private PositionDAO positionDAO;
     @Autowired
-    private void setDAOs(DepartmentDAO departmentDAO, EmploeeDAO emploeeDAO, PositionDAO positionDAO) {
+    private void setDAOs(DepartmentDAO departmentDAO, EmployeeDAO employeeDAO, PositionDAO positionDAO) {
         this.departmentDAO = departmentDAO;
-        this.emploeeDAO = emploeeDAO;
+        this.employeeDAO = employeeDAO;
         this.positionDAO = positionDAO;
     }
 
@@ -31,8 +31,8 @@ public class EmploeeServiceImpl implements EmploeeService {
     }
 
     @Override
-    public void addEmploee(Emploee emploee) {
-        emploeeDAO.insertEmploee(emploee);
+    public void addEmploee(Employee employee) {
+        employeeDAO.insertEmployee(employee);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class EmploeeServiceImpl implements EmploeeService {
         List<Department> departments = departmentDAO.getAllDepartments();
         for (Department department : departments) {
             setDepartmentDeleteStatus(department);
-            department.setEmploeeCount(emploeeDAO.getEmploeeCountByDepartmentId(department.getId()));
-            department.setEmploeeList(getEmploeesByDepartamentId(department.getId()));
+            department.setEmploeeCount(employeeDAO.getEmployeeCountByDepartmentId(department.getId()));
+            department.setEmployeeList(getEmploeesByDepartamentId(department.getId()));
         }
         return departments;
     }
@@ -57,7 +57,7 @@ public class EmploeeServiceImpl implements EmploeeService {
 
     @Override
     public void deleteEmploee(int id) {
-        emploeeDAO.deleteEmploee(id);
+        employeeDAO.deleteEmployee(id);
     }
 
     @Override
@@ -71,8 +71,8 @@ public class EmploeeServiceImpl implements EmploeeService {
     }
 
     @Override
-    public void updateEmploee(Emploee emploee) {
-        emploeeDAO.updateEmploee(emploee);
+    public void updateEmploee(Employee employee) {
+        employeeDAO.updateEmployee(employee);
     }
 
     @Override
@@ -106,35 +106,35 @@ public class EmploeeServiceImpl implements EmploeeService {
     }
 
     @Override
-    public List<Emploee> searchEmploee(String request) {
-        List<Emploee> emploeeList = null;
+    public List<Employee> searchEmploee(String request) {
+        List<Employee> employeeList = null;
         if (request != null) {
-            emploeeList =  emploeeDAO.searchEmploee(request);
-            for (Emploee emploee : emploeeList) {
-                emploee.setPosition(positionDAO.getPositionById(emploee.getPositionId()));
-                emploee.setDepartment(departmentDAO.getDepartmentById(emploee.getDepartmentId()));
+            employeeList =  employeeDAO.searchEmployee(request);
+            for (Employee employee : employeeList) {
+                employee.setPosition(positionDAO.getPositionById(employee.getPositionId()));
+                employee.setDepartment(departmentDAO.getDepartmentById(employee.getDepartmentId()));
             }
         }
-        return emploeeList;
+        return employeeList;
     }
 
-    private List<Emploee> getEmploeesByDepartamentId(int departmentId) {
-       List<Emploee>  emploeeList = emploeeDAO.getEmploeesByDepartamentId(departmentId);
-       for (Emploee emploee : emploeeList) {
-           emploee.setPosition(positionDAO.getPositionById(emploee.getPositionId()));
+    private List<Employee> getEmploeesByDepartamentId(int departmentId) {
+       List<Employee> employeeList = employeeDAO.getEmployeesByDepartmentId(departmentId);
+       for (Employee employee : employeeList) {
+           employee.setPosition(positionDAO.getPositionById(employee.getPositionId()));
        }
-       return emploeeList;
+       return employeeList;
     }
 
     private void setPositionDeleteStatus(Position position) {
-        int emploeeCount = emploeeDAO.getEmploeeCountByPositionId(position.getId());
+        int emploeeCount = employeeDAO.getEmployeeCountByPositionId(position.getId());
         if (emploeeCount <= 0) {
             position.setCanDelete(true);
         }
     }
 
     private void setDepartmentDeleteStatus(Department department) {
-        int emploeeCount = emploeeDAO.getEmploeeCountByDepartmentId(department.getId());
+        int emploeeCount = employeeDAO.getEmployeeCountByDepartmentId(department.getId());
         if (emploeeCount <= 0) {
             department.setCanDelete(true);
         }

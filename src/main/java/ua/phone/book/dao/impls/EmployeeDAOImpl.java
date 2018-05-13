@@ -6,8 +6,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
-import ua.phone.book.dao.interfaces.EmploeeDAO;
-import ua.phone.book.models.Emploee;
+import ua.phone.book.dao.interfaces.EmployeeDAO;
+import ua.phone.book.models.Employee;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Component
-public class EmploeeDAOImpl implements EmploeeDAO {
+public class EmployeeDAOImpl implements EmployeeDAO {
 
     private NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -25,8 +25,8 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
-    public List<Emploee> getEmploeesByDepartamentId(int departmentId) {
-        String sql = "SELECT * FROM emploee WHERE department_id=:departmentId";
+    public List<Employee> getEmployeesByDepartmentId(int departmentId) {
+        String sql = "SELECT * FROM employee WHERE department_id=:departmentId";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("departmentId", departmentId);
         try {
@@ -37,8 +37,8 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
-    public Emploee getEmploeeById(int id) {
-        String sql = "SELECT * FROM emploee WHERE id=:id";
+    public Employee getEmployeeById(int id) {
+        String sql = "SELECT * FROM employee WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         try {
@@ -49,54 +49,54 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
-    public int getEmploeeCountByPositionId(int id) {
-        String sql = "SELECT count(*) FROM emploee WHERE position_id=:id";
+    public int getEmployeeCountByPositionId(int id) {
+        String sql = "SELECT count(*) FROM employee WHERE position_id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         return jdbcTemplate.queryForObject(sql, params, Integer.class);
     }
 
     @Override
-    public void insertEmploee(Emploee emploee) {
-        String sql = "INSERT INTO emploee (full_name, position_id, ledline_number, mobile_number, department_Id, search_field)" +
+    public void insertEmployee(Employee employee) {
+        String sql = "INSERT INTO employee (full_name, position_id, ledline_number, mobile_number, department_Id, search_field)" +
                 "VALUES (:fullName, :positionId, :ledlineNum, :mobileNum, :departmentId, :searchField)";
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("fullName", emploee.getFullName());
-        params.addValue("positionId", emploee.getPositionId());
-        params.addValue("ledlineNum", emploee.getLedlineNumber());
-        params.addValue("mobileNum", emploee.getMobileNumber());
-        params.addValue("departmentId", emploee.getDepartmentId());
-        params.addValue("searchField", emploee.getFullName().toUpperCase());
+        params.addValue("fullName", employee.getFullName());
+        params.addValue("positionId", employee.getPositionId());
+        params.addValue("ledlineNum", employee.getLedlineNumber());
+        params.addValue("mobileNum", employee.getMobileNumber());
+        params.addValue("departmentId", employee.getDepartmentId());
+        params.addValue("searchField", employee.getFullName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 
     @Override
-    public void updateEmploee(Emploee emploee) {
-        String sql = "UPDATE emploee SET full_name=:fullName, position_id=:positionId, " +
+    public void updateEmployee(Employee employee) {
+        String sql = "UPDATE employee SET full_name=:fullName, position_id=:positionId, " +
                 "ledline_number=:ledlineNum, mobile_number=:mobileNum, department_Id=:departmentId, search_field=:searchField" +
                 " WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("id", emploee.getId());
-        params.addValue("fullName", emploee.getFullName());
-        params.addValue("positionId", emploee.getPositionId());
-        params.addValue("ledlineNum", emploee.getLedlineNumber());
-        params.addValue("mobileNum", emploee.getMobileNumber());
-        params.addValue("departmentId", emploee.getDepartmentId());
-        params.addValue("searchField", emploee.getFullName().toUpperCase());
+        params.addValue("id", employee.getId());
+        params.addValue("fullName", employee.getFullName());
+        params.addValue("positionId", employee.getPositionId());
+        params.addValue("ledlineNum", employee.getLedlineNumber());
+        params.addValue("mobileNum", employee.getMobileNumber());
+        params.addValue("departmentId", employee.getDepartmentId());
+        params.addValue("searchField", employee.getFullName().toUpperCase());
         jdbcTemplate.update(sql, params);
     }
 
     @Override
-    public void deleteEmploee(int id) {
-        String sql = "DELETE FROM emploee WHERE id=:id";
+    public void deleteEmployee(int id) {
+        String sql = "DELETE FROM employee WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         jdbcTemplate.update(sql, params);
     }
 
     @Override
-    public List<Emploee> searchEmploee(String request) {
-        String sql = "SELECT * FROM emploee e, departments d, positions p" +
+    public List<Employee> searchEmployee(String request) {
+        String sql = "SELECT * FROM employee e, departments d, positions p" +
                 " WHERE e.department_id=d.id and e.position_id=p.id and" +
                 " (e.search_field LIKE :request " +
                 "or e.ledline_number LIKE :request " +
@@ -113,25 +113,25 @@ public class EmploeeDAOImpl implements EmploeeDAO {
     }
 
     @Override
-    public int getEmploeeCountByDepartmentId(int id) {
-        String sql = "SELECT COUNT(*) FROM emploee WHERE department_id=:id";
+    public int getEmployeeCountByDepartmentId(int id) {
+        String sql = "SELECT COUNT(*) FROM employee WHERE department_id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         return jdbcTemplate.queryForObject(sql, params, Integer.class);
     }
 
-    private static final class EmloeeMapper implements RowMapper<Emploee> {
+    private static final class EmloeeMapper implements RowMapper<Employee> {
 
         @Override
-        public Emploee mapRow(ResultSet rs, int i) throws SQLException {
-            Emploee emploee = new Emploee();
-            emploee.setId(rs.getInt("id"));
-            emploee.setFullName(rs.getString("full_name"));
-            emploee.setPositionId(rs.getInt("position_id"));
-            emploee.setLedlineNumber(rs.getString("ledline_number"));
-            emploee.setMobileNumber(rs.getString("mobile_number"));
-            emploee.setDepartmentId(rs.getInt("department_id"));
-            return emploee;
+        public Employee mapRow(ResultSet rs, int i) throws SQLException {
+            Employee employee = new Employee();
+            employee.setId(rs.getInt("id"));
+            employee.setFullName(rs.getString("full_name"));
+            employee.setPositionId(rs.getInt("position_id"));
+            employee.setLedlineNumber(rs.getString("ledline_number"));
+            employee.setMobileNumber(rs.getString("mobile_number"));
+            employee.setDepartmentId(rs.getInt("department_id"));
+            return employee;
         }
     }
 }

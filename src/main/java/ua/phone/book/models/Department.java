@@ -25,14 +25,14 @@ public class Department {
         this.emploeeCount = emploeeCount;
     }
 
-    List<Emploee> emploeeList;
+    List<Employee> employeeList;
 
-    public List<Emploee> getEmploeeList() {
-        return emploeeList;
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
 
-    public void setEmploeeList(List<Emploee> emploeeList) {
-        this.emploeeList = emploeeList;
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
     }
 
     public int getId() {

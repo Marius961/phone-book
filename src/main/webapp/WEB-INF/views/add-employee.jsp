@@ -27,10 +27,10 @@
 
 <main>
     <div class="form-header"></div>
-    <form:form action="/process-emploee" method="post" modelAttribute="emploee" cssClass="form-box">
+    <form:form action="/process-employee" method="post" modelAttribute="employee" cssClass="form-box">
         <div class="form-group">
             <form:label path="" for="fullName">ПІБ</form:label>
-            <form:input path="fullName" type="text" class="form-control" id="fullName" value="${emploee.fullName}"/>
+            <form:input path="fullName" type="text" class="form-control" id="fullName" value="${employee.fullName}"/>
             <small class="form-text text-muted">Введіть ім'я, прізвище, по батькові працівника</small>
             <form:errors path="fullName" cssClass="error-message"/>
         </div>
@@ -60,7 +60,7 @@
         </div>
         <div class="form-group" >
             <form:label path="ledlineNumber" for="ledlineNum">Домашній телефон</form:label>
-            <form:input path="ledlineNumber" type="tel" class="form-control" id="ledlineNum" value="${emploee.ledlineNumber}" cssStyle="width: 80%"/>
+            <form:input path="ledlineNumber" type="tel" class="form-control" id="ledlineNum" value="${employee.ledlineNumber}" cssStyle="width: 80%"/>
             <small class="form-text text-muted">Введіть домашній телефон працівника</small>
             <form:errors path="ledlineNumber" cssClass="error-message"/>
         </div>
@@ -70,11 +70,11 @@
             <div class="input-group-prepend" style="width: 10%; display: inline-block">
                 <div class="input-group-text">+38</div>
             </div>
-            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${emploee.mobileNumber}" cssStyle="width: 70%; display: inline-block" />
+            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${employee.mobileNumber}" cssStyle="width: 70%; display: inline-block" />
             <small class="form-text text-muted">Введіть мобільний телефон працівника</small>
             <form:errors path="mobileNumber" cssClass="error-message"/>
         </div>
-        <form:hidden path="id" value="${emploee.id}"/>
+        <form:hidden path="id" value="${employee.id}"/>
         <button type="submit" class="btn btn-primary" style="background-color: #28a745">Зберегти</button>
     </form:form>
 </main>
