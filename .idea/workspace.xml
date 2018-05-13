@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f092c7c-7bf5-48a3-851d-1266092dd1b2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,11 +38,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="full-info.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="full-info.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/full-info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
+            <state relative-caret-position="308">
               <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/826ebe26-d8b1-491e-b97f-88c28eb813ca/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="app-context.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -68,7 +86,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/EmploeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Emploee.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/Position.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/app-context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/PositionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/services/impls/EmploeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/DepartmentDAO.java" />
@@ -98,6 +115,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/EmploeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/services/impls/EmploeeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/full-info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/app-context.xml" />
       </list>
     </option>
   </component>
@@ -160,89 +178,65 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name="phone-book" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.48755655" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -310,11 +304,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.7" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="phone_book:war exploded">
+        <artifact name="PhoneBook_Project:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -380,6 +373,7 @@
       <method>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="phone_book:war exploded" />
+          <artifact name="PhoneBook_Project:war exploded" />
         </option>
       </method>
     </configuration>
@@ -406,29 +400,29 @@
       <workItem from="1525930875803" duration="1649000" />
       <workItem from="1525940308355" duration="4000" />
       <workItem from="1526046975189" duration="152000" />
+      <workItem from="1526199829075" duration="340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48884000" />
+    <option name="totallyTimeSpent" value="49224000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1272" height="760" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32847896" />
+      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.32791328" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32975206" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32975206" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3295129" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.66019416" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32847896" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
@@ -437,17 +431,18 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.5760518" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27438018" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2829513" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32975206" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32847896" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,13 +467,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmploeeValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -619,20 +607,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.3.RELEASE/spring-jdbc-5.0.3.RELEASE.jar!/org/springframework/jdbc/support/GeneratedKeyHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.3.RELEASE/spring-jdbc-5.0.3.RELEASE.jar!/org/springframework/jdbc/support/GeneratedKeyHolder.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/PositionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -705,13 +680,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.3.RELEASE/spring-web-5.0.3.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="219" column="16" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.3.RELEASE/spring-web-5.0.3.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-department.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -815,8 +784,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/full-info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
+        <state relative-caret-position="308">
           <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/826ebe26-d8b1-491e-b97f-88c28eb813ca/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -826,7 +805,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>phone_book:war</last-edited>
+          <last-edited>PhoneBook_Project:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -863,11 +842,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.48755655" />
               </list>
             </option>
           </splitter-proportions>
@@ -875,11 +854,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|phone_book</last-edited>
+          <last-edited>PhoneBook_Project</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.48755655" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
