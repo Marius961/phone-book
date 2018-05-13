@@ -30,7 +30,7 @@ public class EmployeeValidator implements Validator {
         try {
             int test = Integer.parseInt(number);
         } catch (NumberFormatException e) {
-            errors.rejectValue("ledlineNumber", "emoloee.number.incorrect");
+            errors.rejectValue("ledlineNumber", "employee.number.incorrect");
         }
     }
 
