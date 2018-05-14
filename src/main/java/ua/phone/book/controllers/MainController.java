@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.phone.book.models.Department;
 import ua.phone.book.models.Employee;
 import ua.phone.book.models.Position;
-import ua.phone.book.models.SearchedObhect;
+import ua.phone.book.models.SearchedObject;
 import ua.phone.book.services.interfaces.EmploeeService;
 import ua.phone.book.validators.BaseValidator;
 import ua.phone.book.validators.EmployeeValidator;
@@ -39,7 +39,7 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("departments", emploeeService.getAllDepartments());
         modelAndView.addObject("employee", new Employee());
-        modelAndView.addObject("searchedObject", new SearchedObhect());
+        modelAndView.addObject("searchedObject", new SearchedObject());
         modelAndView.setViewName("index");
         return modelAndView;
     }
@@ -185,11 +185,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "/search-emplyoee", method = RequestMethod.POST)
-    public ModelAndView getSearchResults(@ModelAttribute SearchedObhect searchedObhect) {
+    public ModelAndView getSearchResults(@ModelAttribute SearchedObject searchedObhect) {
         if (!searchedObhect.getObjectName().equals("")) {
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("employee", new Employee());
-            modelAndView.addObject("searchedObject", new SearchedObhect());
+            modelAndView.addObject("searchedObject", new SearchedObject());
             modelAndView.addObject("results", emploeeService.searchEmploee(searchedObhect.getObjectName()));
             modelAndView.setViewName("search-results");
             return modelAndView;

@@ -30,7 +30,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("departmentId", departmentId);
         try {
-            return jdbcTemplate.query(sql, params, new EmloeeMapper());
+            return jdbcTemplate.query(sql, params, new EmloyeeMapper());
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -42,7 +42,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", id);
         try {
-            return jdbcTemplate.queryForObject(sql, params, new EmloeeMapper());
+            return jdbcTemplate.queryForObject(sql, params, new EmloyeeMapper());
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -106,7 +106,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("request","%" + request.toUpperCase() + "%");
         try {
-            return jdbcTemplate.query(sql, params, new EmloeeMapper());
+            return jdbcTemplate.query(sql, params, new EmloyeeMapper());
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -120,7 +120,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return jdbcTemplate.queryForObject(sql, params, Integer.class);
     }
 
-    private static final class EmloeeMapper implements RowMapper<Employee> {
+    private static final class EmloyeeMapper implements RowMapper<Employee> {
 
         @Override
         public Employee mapRow(ResultSet rs, int i) throws SQLException {
