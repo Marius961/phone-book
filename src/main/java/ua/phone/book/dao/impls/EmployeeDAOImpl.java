@@ -37,18 +37,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
-        String sql = "SELECT * FROM employee WHERE id=:id";
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("id", id);
-        try {
-            return jdbcTemplate.queryForObject(sql, params, new EmloyeeMapper());
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-        }
-    }
-
-    @Override
     public int getEmployeeCountByPositionId(int id) {
         String sql = "SELECT count(*) FROM employee WHERE position_id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();

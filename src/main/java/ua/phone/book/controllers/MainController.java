@@ -184,13 +184,13 @@ public class MainController {
         return "redirect:/info";
     }
 
-    @RequestMapping(value = "/search-emplyoee", method = RequestMethod.POST)
-    public ModelAndView getSearchResults(@ModelAttribute SearchedObject searchedObhect) {
-        if (!searchedObhect.getObjectName().equals("")) {
+    @RequestMapping(value = "/search-employee", method = RequestMethod.POST)
+    public ModelAndView getSearchResults(@ModelAttribute SearchedObject searchedObject) {
+        if (!searchedObject.getObjectName().equals("")) {
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("employee", new Employee());
-            modelAndView.addObject("searchedObject", new SearchedObject());
-            modelAndView.addObject("results", emploeeService.searchEmploee(searchedObhect.getObjectName()));
+            modelAndView.addObject("searchedObject", searchedObject);
+            modelAndView.addObject("results", emploeeService.searchEmploee(searchedObject.getObjectName()));
             modelAndView.setViewName("search-results");
             return modelAndView;
         } else {

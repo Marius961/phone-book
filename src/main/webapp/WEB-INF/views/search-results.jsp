@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="<c:url value="/"/>">На головну</a>
             <form:form modelAttribute="searchedObject" action="/search-employee" method="post" class="form-inline my-2 my-lg-0">
-                <form:input path="objectName" class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search"/>
+                <form:input path="objectName" class="form-control mr-sm-2" type="search" placeholder="Пошук" aria-label="Search" value="${searchedObject.objectName}"/>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Знайти</button>
             </form:form>
         </div>

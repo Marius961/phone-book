@@ -67,8 +67,8 @@
                     <form:option value="${department.id}" label="${department.name}"/>
                 </c:forEach>
             </form:select>
-            <form:errors path="department" cssClass="error-message"/>
         </div>
+        <form:errors path="departmentId" cssClass="error-message"/>
         <div class="form-group" >
             <form:label path="ledlineNumber" for="ledlineNum">Домашній телефон</form:label>
             <form:input path="ledlineNumber" type="tel" class="form-control" id="ledlineNum" value="${employee.ledlineNumber}" cssStyle="width: 80%"/>
@@ -78,10 +78,10 @@
         <div class="form-group">
             <form:label path="mobileNumber" for="mobileNum">Мобільний телефон</form:label>
             <br>
-            <div class="input-group-prepend" style="width: 10%; display: inline-block">
+            <div class="input-group-prepend" style="width: 6%; display: inline-block">
                 <div class="input-group-text">+38</div>
             </div>
-            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${employee.mobileNumber}" cssStyle="width: 70%; display: inline-block" />
+            <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${employee.mobileNumber}" cssStyle="width: 73.5%; display: inline-block" />
             <small class="form-text text-muted">Введіть мобільний телефон працівника</small>
             <form:errors path="mobileNumber" cssClass="error-message"/>
         </div>

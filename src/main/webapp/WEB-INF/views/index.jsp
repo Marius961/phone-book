@@ -31,57 +31,64 @@
     </nav>
 </header>
 <main>
-    <c:forEach var="department" items="${departments}" varStatus="status">
-        <div>
-            <div class="table-div dep-block" onclick="showHide(${department.id})" id="label${department.id}">
-                <div class="table-cell-div">${department.name}
-                    <small>(${department.emploeeCount})</small>
-                    <div class="icon-div-2">
-                        <img src="<%=request.getContextPath()%>/resources/images/arrowIMG.png" class="icon-2" id="icon${department.id}">
+    <c:if test="${not empty departments}">
+        <c:forEach var="department" items="${departments}" varStatus="status">
+            <div>
+                <div class="table-div dep-block" onclick="showHide(${department.id})" id="label${department.id}">
+                    <div class="table-cell-div">${department.name}
+                        <small>(${department.emploeeCount})</small>
+                        <div class="icon-div-2">
+                            <img src="<%=request.getContextPath()%>/resources/images/arrowIMG.png" class="icon-2" id="icon${department.id}">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="department${department.id}" style="display: none">
-                <c:if test="${empty department.employeeList}">
-                    <div class="table-div-info">
-                        <span class="table-cell-div-info">Працівники у цьому відділі відсутні</span>
-                        <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
-                    </div>
-                </c:if>
-                <c:if test="${not empty department.employeeList}">
-                    <div class="table-div">
-                        <span class="table-cell-div">Повне ім'я</span>
-                        <span class="table-cell-div">Посада</span>
-                        <span class="table-cell-div">Мобільний телефон</span>
-                        <span class="table-cell-div">Домашній телефон</span>
-                        <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
-                    </div>
-                    <c:forEach var="employee" items="${department.employeeList}">
+                <div id="department${department.id}" style="display: none">
+                    <c:if test="${empty department.employeeList}">
                         <div class="table-div-info">
-                            <span class="table-cell-div-info">${employee.fullName}</span>
-                            <span class="table-cell-div-info">${employee.position.name}</span>
-                            <span class="table-cell-div-info">${employee.mobileNumber}</span>
-                            <span class="table-cell-div-info">${employee.ledlineNumber}</span>
-                            <div class="table-cell-div-info">
-                                <form:form action="/edit-employee" modelAttribute="employee" cssClass="icon-div" id="editForm${employee.id}">
-                                    <form:hidden path="id" value="${employee.id}"/>
-                                    <form:hidden path="departmentId" value="${employee.departmentId}"/>
-                                    <form:hidden path="ledlineNumber" value="${employee.ledlineNumber}"/>
-                                    <form:hidden path="mobileNumber" value="${employee.mobileNumber}"/>
-                                    <form:hidden path="positionId" value="${employee.positionId}"/>
-                                    <form:hidden path="fullName" value="${employee.fullName}"/>
-                                    <img onclick="submit(${employee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
-                                </form:form>
-                                <div class="icon-div">
-                                    <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-employee/${employee.id}'">
+                            <span class="table-cell-div-info">Працівники у цьому відділі відсутні</span>
+                            <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                        </div>
+                    </c:if>
+                    <c:if test="${not empty department.employeeList}">
+                        <div class="table-div">
+                            <span class="table-cell-div">Повне ім'я</span>
+                            <span class="table-cell-div">Посада</span>
+                            <span class="table-cell-div">Мобільний телефон</span>
+                            <span class="table-cell-div">Домашній телефон</span>
+                            <span class="table-cell-div" onclick="location.href='/add-employee/${department.id}'" style="cursor: pointer"><span><img src="<%=request.getContextPath()%>/resources/images/addIMG.png" style="margin-right:  3%; width: 6.5%">Додати працівника</span></span>
+                        </div>
+                        <c:forEach var="employee" items="${department.employeeList}">
+                            <div class="table-div-info">
+                                <span class="table-cell-div-info">${employee.fullName}</span>
+                                <span class="table-cell-div-info">${employee.position.name}</span>
+                                <span class="table-cell-div-info">${employee.mobileNumber}</span>
+                                <span class="table-cell-div-info">${employee.ledlineNumber}</span>
+                                <div class="table-cell-div-info">
+                                    <form:form action="/edit-employee" modelAttribute="employee" cssClass="icon-div" id="editForm${employee.id}">
+                                        <form:hidden path="id" value="${employee.id}"/>
+                                        <form:hidden path="departmentId" value="${employee.departmentId}"/>
+                                        <form:hidden path="ledlineNumber" value="${employee.ledlineNumber}"/>
+                                        <form:hidden path="mobileNumber" value="${employee.mobileNumber}"/>
+                                        <form:hidden path="positionId" value="${employee.positionId}"/>
+                                        <form:hidden path="fullName" value="${employee.fullName}"/>
+                                        <img onclick="submit(${employee.id})" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                                    </form:form>
+                                    <div class="icon-div">
+                                        <img src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon" onclick="location.href='/delete-employee/${employee.id}'">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </c:forEach>
-                </c:if>
+                        </c:forEach>
+                    </c:if>
+                </div>
             </div>
+        </c:forEach>
+    </c:if>
+    <c:if test="${empty departments}">
+        <div class="table-div">
+            <span class="table-cell-div">Немає відділів</span>
         </div>
-    </c:forEach>
+    </c:if>
 </main>
 
 <script src="<%=request.getContextPath()%>/resources/js/main.js"></script>

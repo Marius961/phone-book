@@ -40,21 +40,28 @@
             </div>
         </div>
         <div id="department1" class="department-div" style="display: none">
-            <c:forEach var="position" items="${positions}">
-                <div class="table-div-info">
-                    <span class="table-cell-div-info">${position.name}</span>
-                    <div class="table-cell-div-info">
-                        <div class="icon-div">
-                            <img onclick="location.href='/edit-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
-                        </div>
-                        <c:if test="${position.canDelete}">
-                            <div class="icon-div">
-                                <img onclick="location.href='/delete-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
-                            </div>
-                        </c:if>
-                    </div>
+            <c:if test="${empty positions}">
+                <div class="table-div">
+                    <span class="table-cell-div">Немає посад</span>
                 </div>
-            </c:forEach>
+            </c:if>
+            <c:if test="${not empty positions}">
+                <c:forEach var="position" items="${positions}">
+                    <div class="table-div-info">
+                        <span class="table-cell-div-info">${position.name}</span>
+                        <div class="table-cell-div-info">
+                            <div class="icon-div">
+                                <img onclick="location.href='/edit-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                            </div>
+                            <c:if test="${position.canDelete}">
+                                <div class="icon-div">
+                                    <img onclick="location.href='/delete-position/${position.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
+                                </div>
+                            </c:if>
+                        </div>
+                    </div>
+                </c:forEach>
+            </c:if>
         </div>
     </div>
     <div style="width: 47%; display: inline-block; margin: 1%; float: left">
@@ -66,21 +73,28 @@
             </div>
         </div>
         <div id="department2" class="department-div" style="display: none">
-            <c:forEach var="department" items="${departments}">
-                <div class="table-div-info">
-                    <span class="table-cell-div-info">${department.name}</span>
-                    <div class="table-cell-div-info">
-                        <div class="icon-div">
-                            <img onclick="location.href='/edit-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
-                        </div>
-                        <c:if test="${department.canDelete}">
-                            <div class="icon-div">
-                                <img onclick="location.href='/delete-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
-                            </div>
-                        </c:if>
-                    </div>
+            <c:if test="${empty departments}">
+                <div class="table-div">
+                    <span class="table-cell-div">Немає посад</span>
                 </div>
-            </c:forEach>
+            </c:if>
+            <c:if test="${not empty departments}">
+                <c:forEach var="department" items="${departments}">
+                    <div class="table-div-info">
+                        <span class="table-cell-div-info">${department.name}</span>
+                        <div class="table-cell-div-info">
+                            <div class="icon-div">
+                                <img onclick="location.href='/edit-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/editIMG.png" class="icon">
+                            </div>
+                            <c:if test="${department.canDelete}">
+                                <div class="icon-div">
+                                    <img onclick="location.href='/delete-department/${department.id}'" src="<%=request.getContextPath()%>/resources/images/delete2IMG.png" class="icon">
+                                </div>
+                            </c:if>
+                        </div>
+                    </div>
+                </c:forEach>
+            </c:if>
         </div>
     </div>
 </main>

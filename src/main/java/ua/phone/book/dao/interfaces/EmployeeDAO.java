@@ -5,10 +5,8 @@ import ua.phone.book.models.Employee;
 import java.util.List;
 
 public interface EmployeeDAO {
-    
+
     List<Employee> getEmployeesByDepartmentId(int departmentId);
-    
-    Employee getEmployeeById(int id);
 
     int getEmployeeCountByPositionId(int id);
 
