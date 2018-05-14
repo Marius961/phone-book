@@ -7,51 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f092c7c-7bf5-48a3-851d-1266092dd1b2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b1c5543-96c7-4015-a921-62f88a2267c4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b1c5543-96c7-4015-a921-62f88a2267c4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/Database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/Database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/EmploeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/EmployeeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/PositionDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/PositionDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/EmploeeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Emploee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/services/impls/EmploeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/services/impls/EmploeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/services/interfaces/EmploeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/services/interfaces/EmploeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmploeeValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-emploee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-employee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/search-results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/search-results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/impls/EmploeeDAOImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/impls/EmploeeDAOImpl$EmloeeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/impls/EmploeeDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/impls/PositionDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/impls/PositionDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/dao/interfaces/EmploeeDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/models/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/models/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/models/Emploee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/services/impls/EmploeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/services/impls/EmploeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/services/interfaces/EmploeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/services/interfaces/EmploeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/classes/ua/phone/book/validators/EmploeeValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/views/add-emploee.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/views/search-results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/WEB-INF/views/search-results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVC/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVC/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/phone/book/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/impls/EmploeeDAOImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/impls/EmploeeDAOImpl$EmloeeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/impls/EmploeeDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/impls/PositionDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/impls/PositionDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/dao/interfaces/EmploeeDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/models/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/phone/book/models/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/models/Emploee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/services/impls/EmploeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/phone/book/services/impls/EmploeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/services/interfaces/EmploeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/phone/book/services/interfaces/EmploeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/phone/book/validators/EmploeeValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,11 +36,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PositionDAOImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/PositionDAOImpl.java">
+      <file leaf-file-name="app-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
+            <state relative-caret-position="152">
+              <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeValidator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -118,7 +85,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/EmploeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Emploee.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/Position.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/app-context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/PositionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/services/impls/EmploeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/DepartmentDAO.java" />
@@ -144,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/full-info.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/models/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-position.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/EmploeeDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/EmploeeDAO.java" />
@@ -152,6 +117,8 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/EmployeeDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/PositionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/app-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java" />
       </list>
     </option>
   </component>
@@ -189,7 +156,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-55" />
     <option name="width" value="770" />
     <option name="height" value="880" />
@@ -202,15 +169,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phone_book" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhoneBook_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -552,12 +524,13 @@
       <workItem from="1526199273653" duration="110000" />
       <workItem from="1526210764772" duration="192000" />
       <workItem from="1526226129852" duration="2266000" />
-      <workItem from="1526229394352" duration="503000" />
+      <workItem from="1526229394352" duration="3774000" />
+      <workItem from="1526288725603" duration="420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51955000" />
+    <option name="totallyTimeSpent" value="55646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1272" height="760" extended-state="6" />
@@ -576,7 +549,6 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.66019416" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32847896" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
@@ -585,17 +557,18 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.5760518" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29421487" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29421487" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32975206" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32847896" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,20 +601,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -854,24 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/BaseValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -938,16 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/dao/interfaces/PositionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -971,8 +906,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/dao/impls/PositionDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="969">
           <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/phone/book/validators/EmployeeValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
         </state>
       </provider>
     </entry>

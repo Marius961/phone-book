@@ -37,7 +37,7 @@ public class EmployeeValidator implements Validator {
     private void validateMobileNum(String number, Errors errors) {
         try {
             int test = Integer.parseInt(number);
-            if (number.length() != 10) {
+            if (number.length() < 10 || number.length() > 10) {
                 errors.rejectValue("mobileNumber", "employee.mobile.number.min.size");
             }
         } catch (NumberFormatException e) {
