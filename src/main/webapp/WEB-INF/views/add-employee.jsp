@@ -78,7 +78,7 @@
         <div class="form-group">
             <form:label path="mobileNumber" for="mobileNum">Мобільний телефон</form:label>
             <br>
-            <div class="input-group-prepend" style="width: 6%; display: inline-block">
+            <div class="input-group-prepend" style="width: 7%; display: inline-block">
                 <div class="input-group-text">+38</div>
             </div>
             <form:input path="mobileNumber" type="text" class="form-control" id="mobileNum" value="${employee.mobileNumber}" cssStyle="width: 73.5%; display: inline-block" />
